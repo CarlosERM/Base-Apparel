@@ -1,0 +1,277 @@
+@import "reset.css";
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+:root {
+  /* PRIMARY */
+  --desaturated-red: hsl(0, 36%, 70%);
+  --soft-red: hsl(0, 93%, 68%);
+  /* NEUTRAL */
+  --dark-red: hsl(0, 6%, 24%);
+  /* GRADIENTS */
+  --first: 135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%);
+  --second: 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%);
+
+  /* TYPOGRAPHY */
+  --font: "Josefin Sans", sans-serif;
+}
+
+html {
+  font-family: var(--font);
+  color: var(--desaturated-red);
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(var(--first));
+}
+
+.right {
+  margin: 0 auto;
+  max-width: 600px;
+}
+.mulher_bonita {
+  width: 100%;
+}
+
+.mulher_bonita_desk {
+  display: none;
+}
+
+.left {
+  text-align: center;
+  max-width: 500px;
+}
+.espaco {
+  margin: 30px;
+}
+/* HEAD */
+.logo {
+  height: 21px;
+  display: block;
+}
+
+h1 {
+  font-size: 2.6em;
+  letter-spacing: 9px;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.left__acessory {
+  color: var(--dark-red);
+  font-weight: 600;
+}
+
+p {
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+}
+
+form {
+  margin-top: 36px;
+  margin-bottom: 90px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+main {
+  margin: 0 auto;
+}
+#input-email {
+  border-radius: 2rem;
+  border: 1px solid var(--desaturated-red);
+  padding: 16px 24px;
+  width: 100%;
+
+  background: linear-gradient(var(--first));
+  margin-bottom: 8px;
+}
+#input-email.invalid {
+  border: 2px solid var(--soft-red);
+}
+#input-email::placeholder {
+  font-weight: 400;
+  color: var(--desaturated-red);
+  opacity: 0.5;
+  font-family: var(--font);
+}
+.botao {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border-radius: 2rem;
+  width: 65px;
+  height: 50px;
+  border: none;
+  background: linear-gradient(var(--second));
+  box-shadow: 0px 14px 36px -8px var(--desaturated-red);
+}
+.botao:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+form span {
+  color: var(--soft-red);
+  font-size: 13px;
+}
+
+.error {
+  display: none;
+  position: absolute;
+  top: 12px;
+  right: 75px;
+  z-index: 1000;
+}
+
+.error.active {
+  display: inline-block;
+}
+
+@media (min-width: 500px) {
+  nav {
+    width: 500px;
+    margin: 0 auto;
+  }
+  .logo.left {
+    text-align: left;
+    margin: 30px 0;
+  }
+  .left {
+    margin: 0 auto;
+  }
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (min-width: 768px) {
+  .espaco {
+    margin-left: 40px;
+  }
+
+  .error {
+    top: 15px;
+    right: 115px;
+  }
+
+  body {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .titulo {
+    margin-top: 130px;
+    font-size: 4rem;
+  }
+
+  .paragraph {
+    max-width: 500px;
+    margin-top: 40px;
+    font-size: 1.3rem;
+  }
+
+  .formulario {
+    margin-top: 50px;
+  }
+
+  .logo {
+    height: 40px;
+    margin-top: 60px;
+    margin-left: 10%;
+  }
+
+  .mulher_bonita {
+    display: none;
+  }
+
+  .right {
+    width: 40%;
+    background: url("../images/hero-desktop.jpg") no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  form span {
+    margin-left: 30px;
+  }
+
+  .left {
+    text-align: left;
+    width: 60%;
+    grid-area: left;
+    max-width: 1000px;
+  }
+}
+@media (min-width: 1100px) and (max-width: 1366px) {
+  .titulo {
+    font-size: 3rem;
+    margin-top: 66px;
+  }
+  .logo {
+    margin-top: 45px;
+  }
+}
+@media (min-width: 1100px) {
+  body {
+    max-width: 1440px;
+  }
+  .paragraph {
+    max-width: 450px;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7rem;
+  }
+  .titulo.espaco {
+    margin-bottom: 15px;
+  }
+  .formulario {
+    max-width: 450px;
+  }
+  #input-email {
+    height: 55px;
+  }
+  .botao {
+    height: 55px;
+    width: 100px;
+  }
+  .paragraph.espaco {
+    margin: 0;
+  }
+  .espaco {
+    margin-left: 0;
+  }
+  .left {
+    margin-left: 165px;
+  }
+  .titulo {
+    max-width: 400px;
+    letter-spacing: 1rem;
+    line-height: 4.5rem;
+  }
+  .right {
+    width: 50%;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+}
